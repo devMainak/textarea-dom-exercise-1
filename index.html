@@ -13,10 +13,16 @@
   <textarea id="bookTextarea" rows="5" cols="50"></textarea>
   <button id="bookListButton">Display Book List</button>
   <p id="bookListResult"></p>
-  
+
+
+  <label for="recipeTextarea">Enter a recipe</label>
+  <textarea id="recipeTextarea" rows="5" cols="50"></textarea>
+  <button id="displayRecipeButton">Display Recipe</button>
+  <p id="displayRecipeResult"></p>
   
   <script>
 
+    //display book list
     const bookTextarea = document.getElementById("bookTextarea");
     const bookListButton = document.getElementById("bookListButton");
     const bookListResult = document.getElementById("bookListResult");
@@ -24,6 +30,25 @@
     bookListButton.addEventListener("click", function(){
       const books = bookTextarea.value;
       bookListResult.textContent = `Your favorite books: ${books}`;
+    });
+
+    //display recipe
+    const recipeTextarea = document.getElementById("recipeTextarea");
+    const displayRecipeButton = document.getElementById("displayRecipeButton");
+    const displayRecipeResult = document.getElementById("displayRecipeResult");
+
+    displayRecipeButton.addEventListener("click", function(){
+      const recipe = recipeTextarea.value;
+      const newlineIndex = recipe.indexOf("\n");
+      
+      if (newlineIndex !== -1)
+      {
+        displayRecipeResult.innerHTML =`<strong>Ingredients:</strong> <br/>${recipe.substring(0, newlineIndex)}<br/><br/><strong>Instructions: </strong><br/>${recipe.substring(newlineIndex, recipe.length)}`
+      }
+      else
+      {
+        displayRecipeResult.textContent = `Enter the recipe with proper indentations!`  
+      }
     });
     
   </script>
