@@ -19,6 +19,13 @@
   <textarea id="recipeTextarea" rows="5" cols="50"></textarea>
   <button id="displayRecipeButton">Display Recipe</button>
   <p id="displayRecipeResult"></p>
+
+
+  <lable for="bioTextarea">Enter your personal bio:</lable>
+  <textarea id="bioTextarea" rows="5" cols="50"></textarea>
+  <button id="displayBioButton">Display Bio</button>
+  <p id="displayBioResult"></p>
+
   
   <script>
 
@@ -49,6 +56,16 @@
       {
         displayRecipeResult.textContent = `Enter the recipe with proper indentations!`  
       }
+    });
+
+    //display bio
+    const bioTextarea = document.getElementById("bioTextarea");
+    const displayBioButton = document.getElementById("displayBioButton");
+    const displayBioResult = document.getElementById("displayBioResult");
+
+    displayBioButton.addEventListener("click", function(){
+      const bio = bioTextarea.value;
+      displayBioResult.textContent = `Your personal bio: ${bio}`;
     });
     
   </script>
