@@ -26,6 +26,12 @@
   <button id="displayBioButton">Display Bio</button>
   <p id="displayBioResult"></p>
 
+
+  <label for="goalsTextarea">Enter your list of goal:</label>
+  <textarea id="goalsTextarea" rows="5" cols="50"></textarea>
+  <button id="displayGoalsBtn">Display Goals</button>
+  <p id="displayGoalsResult"></p>
+
   
   <script>
 
@@ -66,6 +72,15 @@
     displayBioButton.addEventListener("click", function(){
       const bio = bioTextarea.value;
       displayBioResult.textContent = `Your personal bio: ${bio}`;
+    });
+
+    //display goals
+    const goalsTextarea = document.getElementById("goalsTextarea");
+    const displayGoalsBtn = document.getElementById("displayGoalsBtn");
+    const displayGoalsResult = document.getElementById("displayGoalsResult");
+    displayGoalsBtn.addEventListener("click", function(){
+      const goals = goalsTextarea.value;
+      displayGoalsResult.textContent = `Your list of goals: ${goals}`;
     });
     
   </script>
