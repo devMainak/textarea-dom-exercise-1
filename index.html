@@ -32,6 +32,12 @@
   <button id="displayGoalsBtn">Display Goals</button>
   <p id="displayGoalsResult"></p>
 
+
+  <label>Enter a short story or anecdote:</label>
+  <textarea id="storyTextarea" rows="5" cols="50"></textarea>
+  <button id="displayStoryButton">Display Story</button>
+  <p id="displayStoryResult"></p>
+
   
   <script>
 
@@ -81,6 +87,16 @@
     displayGoalsBtn.addEventListener("click", function(){
       const goals = goalsTextarea.value;
       displayGoalsResult.textContent = `Your list of goals: ${goals}`;
+    });
+
+    //display story
+    const storyTextarea = document.getElementById("storyTextarea");
+    const displayStoryButton = document.getElementById("displayStoryButton");
+    const displayStoryResult = document.getElementById("displayStoryResult");
+
+    displayStoryButton.addEventListener("click", function(){
+      const story = storyTextarea.value;
+      displayStoryResult.textContent = `Your short story or anecdote: ${story}`;
     });
     
   </script>
